@@ -86,10 +86,24 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'DATABASE_URL': 'postgresql://postgres:lk1CPQVtc9KolX4xy7Lf@containers-us-west-39.railway.app:7191/railway',
+        'PGDATABASE': 'railway',
+        'PGHOST': 'containers-us-west-39.railway.app',
+        'PGPASSWORD': 'lk1CPQVtc9KolX4xy7Lf',
+        'PGPORT': '7191',
+        'PGUSER': 'postgres' 
+        
     }
 }
+
+# databases for localhost:
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
