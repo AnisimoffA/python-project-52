@@ -86,13 +86,12 @@ WSGI_APPLICATION = 'task_manager.wsgi.application'
 
 DATABASES = {
     'default': {
-        'DATABASE_URL': 'postgresql://postgres:lk1CPQVtc9KolX4xy7Lf@containers-us-west-39.railway.app:7191/railway',
-        'PGDATABASE': 'railway',
-        'PGHOST': 'containers-us-west-39.railway.app',
-        'PGPASSWORD': 'lk1CPQVtc9KolX4xy7Lf',
-        'PGPORT': '7191',
-        'PGUSER': 'postgres' 
-        
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ["PGDATABASE"],
+        'USER': os.environ["PGUSER"],
+        'PASSWORD': os.environ["PGPASSWORD"],
+        'HOST': os.environ["PGHOST"],
+        'PORT': os.environ["PGPORT"],
     }
 }
 
