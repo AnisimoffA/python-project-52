@@ -35,10 +35,9 @@ ALLOWED_HOSTS = [
     'python-project-52-production-312b.up.railway.app',
                  ]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://python-project-52-production-312b.up.railway.app",
-]
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://python-project-52-production-312b.up.railway.app'
+    ]
 
 # Application definition
 
