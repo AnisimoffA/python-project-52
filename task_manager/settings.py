@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
-    'task_manager'
+    'django_extensions',
+    'task_manager.apps.TaskManagerConfig',
+    'statuses.apps.StatusesConfig',
+    'tasks.apps.TasksConfig',
+    'users.apps.UsersConfig',
+    'labels.apps.LabelsConfig'
 ]
 
 MIDDLEWARE = [
@@ -133,3 +138,5 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOCALE_PATHS = ( os.path.join(BASE_DIR, 'locale'), )
+
+AUTH_USER_MODEL = 'users.CustomUsers'

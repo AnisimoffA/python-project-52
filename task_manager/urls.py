@@ -17,8 +17,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from task_manager.views import *
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', main_page, name="main_page")
+    path('', MainPage.as_view(), name="main_page"),
+    path('login/', LoginUser.as_view(), name="login"),
+    path('logout/', logout_user, name="logout"),
+    path('users/', include('users.urls')),
+    path('tasks/', include('tasks.urls')),
+    path('statuses/', include('statuses.urls')),
+    path('labels/', include('labels.urls')),
+    # удалить
+    path('test/', test)
+    # -
 ]

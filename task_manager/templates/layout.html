@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{ title }}</title>
 </head>
 <body>
     {% block mainmenu %}
@@ -20,20 +20,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
             <ul class="navbar-nav mr-auto">
+                {% for menu_tag in menu %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url "main_page" %}">Пользователи</a>
+                    <a class="nav-link" href="{% url menu_tag.url_name %}"> {{ menu_tag.title }} </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url "main_page" %}">Статусы</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url "main_page" %}">Метки</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url "main_page" %}">Задачи</a>
-                </li>
+                {% endfor %}
             </ul>
-            <ul class="navbar-nav"> Выход </ul>
         </div>
     </nav>
     {% endblock mainmenu %}

@@ -57,6 +57,17 @@ beautifulsoup4 = ">=4.8.0"
 django = ">=3.2"
 
 [[package]]
+name = "django-extensions"
+version = "3.2.3"
+description = "Extensions for Django"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "flake8"
 version = "6.1.0"
 description = "the modular source code checker: pep8 pyflakes and co"
@@ -169,7 +180,7 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "f852332ef992a3760928720fc01cd52d5e0cfc688d01b82076419cfac80c0f90"
+content-hash = "672c9f5a6bb335c1d942031f61e09f26358ca817c086133e6c1ead08cd0b76f4"
 
 [metadata.files]
 asgiref = [
@@ -187,6 +198,10 @@ django = [
 django-bootstrap4 = [
     {file = "django_bootstrap4-23.2-py3-none-any.whl", hash = "sha256:6c895cdda58de1360bf82cc9e31014ad158dad680198ac8366ca33c19efa972f"},
     {file = "django_bootstrap4-23.2.tar.gz", hash = "sha256:6b5080a4bce80fa666ac5ce5d4c77ad6fc3c0984d4257a0060d4077f515f62e5"},
+]
+django-extensions = [
+    {file = "django-extensions-3.2.3.tar.gz", hash = "sha256:44d27919d04e23b3f40231c4ab7af4e61ce832ef46d610cc650d53e68328410a"},
+    {file = "django_extensions-3.2.3-py3-none-any.whl", hash = "sha256:9600b7562f79a92cbf1fde6403c04fee314608fefbb595502e34383ae8203401"},
 ]
 flake8 = [
     {file = "flake8-6.1.0-py2.py3-none-any.whl", hash = "sha256:ffdfce58ea94c6580c77888a86506937f9a1a227dfcd15f245d694ae20a6b6e5"},
