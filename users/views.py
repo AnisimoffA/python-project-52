@@ -12,9 +12,10 @@ from django.utils.translation import gettext as _
 from task_manager.utils import *
 from users.forms import *
 from users.models import *
-
 # Create your views here.
-class UserList(DataMixin, ListView): # не забыть поменять на ListView
+
+
+class UserList(DataMixin, ListView):
     model = CustomUsers
     template_name = "users/users_list.html"
     context_object_name = "users"
@@ -23,7 +24,7 @@ class UserList(DataMixin, ListView): # не забыть поменять на L
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title="TEST Пользователи")
         return context | c_def
-    
+
     def get_queryset(self):
         return CustomUsers.objects.all()
 
@@ -55,14 +56,13 @@ class UserUpdate(CustomUserPermisionsMixin, DataMixin, UpdateView):
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title="TEST Редактирование")
         return context | c_def
-    
 
-class UserDelete(CustomUserPermisionsMixin, DataMixin, DeleteView, LoginRequiredMixin):
+
+class UserDelete(CheckUsersTasksMixin, CustomUserPermisionsMixin, DataMixin, DeleteView, LoginRequiredMixin):
     model = CustomUsers
     template_name = 'users/users_delete.html'
     success_url = reverse_lazy('users_list')
     context_object_name = "user"
-    permission_denied_message = "соси лох"
     
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

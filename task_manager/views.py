@@ -8,6 +8,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
 from django.utils.translation import gettext as _
+from django.contrib import messages
 from task_manager.utils import *
 from task_manager.forms import *
 
@@ -34,7 +35,8 @@ class LoginUser(DataMixin, LoginView):
         c_def = self.get_user_context(title="TEST Вход")
         return context | c_def
     
-    def get_success_url(self) -> str:
+    def get_success_url(self):
+        messages.success(self.request, "Вы залогинены")
         return reverse_lazy('main_page')
 
 
