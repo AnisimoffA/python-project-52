@@ -1,9 +1,11 @@
-lint: 
-	poetry run flake8 task_manager labels statuses tasks users
-
 install:
 	poetry install
 
+lint:
+	poetry run flake8 task_manager labels statuses tasks users
+
+test:
+    poetry run python manage.py test
 
 selfcheck:
 	poetry check
