@@ -1,15 +1,14 @@
 from django.test import TestCase, Client
-from django.urls import reverse
-from users.models import *
-from statuses.models import *
-from tasks.models import *
-from labels.models import *
-# Create your tests here.
+from tasks.models import * # NOQA F403
+from labels.models import * # NOQA F403
 
 
 class BaseTestClass(TestCase):
     def setUp(self):
-        self.user = CustomUsers.objects.create_user(username='test_user', password='test_password')
+        self.user = CustomUsers.objects.create_user(
+            username='test_user',
+            password='test_password'
+        )
         self.client = Client()
         self.client.login(username='test_user', password='test_password')
 
@@ -44,13 +43,17 @@ class TaskUpdateTestCase(BaseTestClass):
     def test_status_creation(self):
         # Тестирование обновление данных формы
         status = Status.objects.create(name='test_status')
-        task = Task.objects.create(creator=self.user, name='test_task', status=status)
+        task = Task.objects.create(
+            creator=self.user,
+            name='test_task',
+            status=status
+        )
         url = reverse('task_update', kwargs={'pk': task.pk})
         updated_data = {
             'name': 'new_data',
             'description': 'new_description',
             'status': status.id
-            }
+        }
 
         response = self.client.post(url, updated_data)
 
@@ -62,7 +65,11 @@ class TaskDeletionTestCase(BaseTestClass):
     def test_status_deletion(self):
         # Тестирование на удаление из базы данных
         status = Status.objects.create(name='test_status')
-        task = Task.objects.create(creator=self.user, name='test_task', status=status)
+        task = Task.objects.create(
+            creator=self.user,
+            name='test_task',
+            status=status
+        )
         url = reverse('task_delete', kwargs={'pk': task.id})
 
         response = self.client.post(url)
@@ -73,14 +80,25 @@ class TaskDeletionTestCase(BaseTestClass):
 
 class TaskFilterTestCase(TestCase):
     def setUp(self):
-        self.user = CustomUsers.objects.create_user(username='test_user', password='test_password')
+        self.user = CustomUsers.objects.create_user(
+            username='test_user',
+            password='test_password'
+        )
         self.client = Client()
         self.client.login(username='test_user', password='test_password')
 
         self.status = Status.objects.create(name='test_status')
-        self.executor = CustomUsers.objects.create_user(username='test_executor', password='test_password')
+        self.executor = CustomUsers.objects.create_user(
+            username='test_executor',
+            password='test_password'
+        )
         self.label = Label.objects.create(name="test_label")
-        self.task = Task.objects.create(creator=self.user, name='test_task2', executor=self.executor, status=self.status)
+        self.task = Task.objects.create(
+            creator=self.user,
+            name='test_task2',
+            executor=self.executor,
+            status=self.status
+        )
         self.task.labels.set(Label.objects.filter(name="test_label"))
 
         self.url = reverse('task_list')

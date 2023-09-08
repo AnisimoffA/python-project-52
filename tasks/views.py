@@ -1,19 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.base import TemplateView
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
-from django import forms
-from django.views import View
-from django.urls import reverse_lazy
+from django.http import HttpResponseRedirect
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView # NOQA E501
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
-from django.contrib import messages
-from task_manager.utils import *
-from tasks.models import *
-from tasks.forms import *
-from task_manager.utils import *
-from users.models import *
+from tasks.forms import * # NOQA F403
+from task_manager.utils import * # NOQA F403
+from users.models import * # NOQA F403
 
 
 class TaskList(LoginRequiredMixin, DataMixin, ListView):
@@ -25,7 +16,7 @@ class TaskList(LoginRequiredMixin, DataMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Задачи")
+        c_def = self.get_user_context(title=_("Tasks"))
         context['form'] = self.form_class(self.request.GET)
 
         return context | c_def
@@ -60,7 +51,7 @@ class TaskPage(LoginRequiredMixin, DataMixin, DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Задача")
+        c_def = self.get_user_context(title=_("Task page"))
         return context | c_def
 
 
@@ -72,14 +63,14 @@ class TaskCreate(LoginRequiredMixin, DataMixin, CreateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Создание задачи")
+        c_def = self.get_user_context(title=_("Task creating"))
         return context | c_def
 
     def form_valid(self, form):
         current_user_id = self.request.user.id
         form.instance.creator = CustomUsers.objects.get(id=current_user_id)
         super().form_valid(form)
-        messages.success(self.request, "Задача успешно создана")
+        messages.success(self.request, _("Task was successfully created"))
         return redirect('task_list')
 
 
@@ -91,16 +82,16 @@ class TaskUpdate(LoginRequiredMixin, DataMixin, UpdateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Редактирование")
+        c_def = self.get_user_context(title=_("Task updating"))
         return context | c_def
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request, "Задача успешно изменена")
+        messages.success(self.request, _("Task was successfully updated"))
         return redirect('task_list')
 
 
-class TaskDelete(CustomTaskPermisionsMixin, LoginRequiredMixin, DataMixin, DeleteView):
+class TaskDelete(CustomTaskPermisionsMixin, LoginRequiredMixin, DataMixin, DeleteView): # NOQA E501
     model = Task
     template_name = 'tasks/task_delete.html'
     success_url = reverse_lazy('task_list')
@@ -109,14 +100,20 @@ class TaskDelete(CustomTaskPermisionsMixin, LoginRequiredMixin, DataMixin, Delet
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Удаление")
+        c_def = self.get_user_context(title=_("Task deleting"))
         return context | c_def
 
     def post(self, request, *args, **kwargs):
         try:
             response = super().post(request, *args, **kwargs)
-            messages.success(self.request, "Задача успешно удалена")
+            messages.success(
+                self.request,
+                _("Task was successfully deleted")
+            )
             return response
         except Exception:
-            messages.warning(self.request, "Задачу может удалить только ее автор.")
+            messages.warning(
+                self.request,
+                _("Only the author can delete the task")
+            )
             return HttpResponseRedirect(reverse_lazy('statuses_list'))

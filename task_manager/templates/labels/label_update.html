@@ -4,7 +4,7 @@
 {% load i18n %}
 
 <div class="container wrapper flex-grow-1">
-    <h1 class="my-4"> Изменение метки </h1>
+    <h1 class="my-4"> {% trans "Update label" %} </h1>
     <form method="post">
         {% csrf_token %}
 
@@ -16,7 +16,7 @@
         </div>
         {% endfor %}
 
-        <button class="btn btn-primary" type="submit">Изменить</button>
+        <button class="btn btn-primary" type="submit">{% trans "Update" %}</button>
     </form>
 </div>
 

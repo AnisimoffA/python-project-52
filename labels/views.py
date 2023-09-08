@@ -1,27 +1,22 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.base import TemplateView
+from django.http import HttpResponseRedirect
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
-from django import forms
 from django.db.models import RestrictedError
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.utils.translation import gettext as _
-from task_manager.utils import *
+from task_manager.utils import * # NOQA F403
 from labels.models import Label
 from labels.forms import LabelForm
-# Create your views here.
+from django.utils.translation import gettext as _
 
 
 class LabelsList(LoginRequiredMixin, DataMixin, ListView):
     model = Label
     template_name = "labels/labels_list.html"
     context_object_name = "labels"
-    
+
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Метки")
+        c_def = self.get_user_context(title=_("Labels"))
         return context | c_def
 
     def get_queryset(self):
@@ -36,11 +31,14 @@ class LabelCreate(LoginRequiredMixin, DataMixin, CreateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Статусы")
+        c_def = self.get_user_context(title=_("Label creating"))
         return context | c_def
 
     def get_success_url(self):
-        messages.success(self.request, "Метка успешно создана")
+        messages.success(
+            self.request,
+            _("Label was created successfully")
+        )
         return reverse_lazy('labels_list')
 
 
@@ -53,31 +51,34 @@ class LabelUpdate(LoginRequiredMixin, DataMixin, UpdateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Редактирование")
+        c_def = self.get_user_context(title=_("Label updating"))
         return context | c_def
 
     def get_success_url(self):
-        messages.success(self.request, "Метка успешно изменена")
+        messages.success(self.request, _("Label was updated successfully"))
         return reverse_lazy('labels_list')
 
 
 class LabelDelete(DeleteView, LoginRequiredMixin, DataMixin):
     model = Label
     template_name = 'labels/label_delete.html'
-    context_object_name = "status"
+    context_object_name = "label"
     success_url = reverse_lazy('labels_list')
     login_url = reverse_lazy('login')
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Удаление")
+        c_def = self.get_user_context(title=_("Label deleting"))
         return context | c_def
 
     def post(self, request, *args, **kwargs):
         try:
             response = super().post(request, *args, **kwargs)
-            messages.success(self.request, "Метка успешно удалена")
+            messages.success(self.request, _("Label was deleted successfully"))
             return response
         except RestrictedError:
-            messages.warning(self.request, "Невозможно удалить метку, потому что она используется.")
+            messages.warning(
+                self.request,
+                _("It is not possible to delete the label because it is being used.") # NOQA E501
+            )
             return HttpResponseRedirect(reverse_lazy('labels_list'))

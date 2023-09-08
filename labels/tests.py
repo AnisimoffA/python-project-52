@@ -1,7 +1,5 @@
-from django.test import TestCase
 from django.test import TestCase, Client
 from django.urls import reverse
-from django.contrib.auth.models import User
 from users.models import CustomUsers
 from labels.models import Label
 # Create your tests here.
@@ -9,7 +7,10 @@ from labels.models import Label
 
 class BaseTestClass(TestCase):
     def setUp(self):
-        self.user = CustomUsers.objects.create_user(username='test_user', password='test_password')
+        self.user = CustomUsers.objects.create_user(
+            username='test_user',
+            password='test_password'
+        )
         self.client = Client()
         self.client.login(username='test_user', password='test_password')
 

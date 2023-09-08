@@ -1,7 +1,6 @@
-from django.contrib import admin
 from django.urls import path
-from users.views import *
-from django.urls import path, include
+from users.views import * # NOQA F403
+
 
 urlpatterns = [
     path('', UserList.as_view(), name="users_list"),

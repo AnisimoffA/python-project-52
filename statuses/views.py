@@ -1,27 +1,22 @@
-from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.forms import UserCreationForm
-from django.views.generic.base import TemplateView
-from django.views.generic import CreateView, ListView, UpdateView, DeleteView
-from django import forms
+from django.http import HttpResponseRedirect
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView # NOQA E501
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
 from django.db.models import RestrictedError
-from task_manager.utils import *
+from task_manager.utils import * # NOQA F403
 from statuses.models import Status
 from statuses.forms import StatusForm
-# Create your views here.
 
 
 class StatusesList(LoginRequiredMixin, DataMixin, ListView):
     model = Status
     template_name = "statuses/statuses_list.html"
     context_object_name = "statuses"
-    
+
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Статусы")
+        c_def = self.get_user_context(title=_("Statuses"))
         return context | c_def
 
     def get_queryset(self):
@@ -36,11 +31,14 @@ class StatusesCreate(LoginRequiredMixin, DataMixin, CreateView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Статусы")
+        c_def = self.get_user_context(title=_("Status creating"))
         return context | c_def
-    
+
     def get_success_url(self):
-        messages.success(self.request, "Статус успешно создан")
+        messages.success(
+            self.request,
+            _("Status was created successfully")
+        )
         return reverse_lazy('statuses_list')
 
 
@@ -48,16 +46,19 @@ class StatusesUpdate(LoginRequiredMixin, DataMixin, UpdateView):
     model = Status
     template_name = 'statuses/statuses_update.html'
     login_url = reverse_lazy('login')
-    
+
     form_class = StatusForm
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Редактирование")
+        c_def = self.get_user_context(title=_("Status updating"))
         return context | c_def
 
     def get_success_url(self):
-        messages.success(self.request, "Статус успешно изменен")
+        messages.success(
+            self.request,
+            _("Status was updated successfully")
+        )
         return reverse_lazy('statuses_list')
 
 
@@ -70,14 +71,20 @@ class StatusesDelete(DeleteView, LoginRequiredMixin, DataMixin):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Удаление")
+        c_def = self.get_user_context(title=_("Status deleting"))
         return context | c_def
 
     def post(self, request, *args, **kwargs):
         try:
             response = super().post(request, *args, **kwargs)
-            messages.success(self.request, "Статус успешно удален")
+            messages.success(
+                self.request,
+                _("Status was deleted successfully")
+            )
             return response
         except RestrictedError:
-            messages.warning(self.request, "Невозможно удалить статус, потому что он используется.")
+            messages.warning(
+                self.request,
+                _("It is not possible to delete the status because it is being used.") # NOQA E501
+            )
             return HttpResponseRedirect(reverse_lazy('statuses_list'))

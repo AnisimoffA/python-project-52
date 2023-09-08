@@ -1,47 +1,35 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from django.contrib.auth.forms import AuthenticationForm
-from django.views.generic import ListView, DetailView, CreateView, TemplateView
+from django.views.generic import TemplateView
 from django.contrib.auth.views import LoginView
-from django.views.generic import CreateView
 from django.urls import reverse_lazy
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import logout
 from django.utils.translation import gettext as _
-from django.contrib import messages
-from task_manager.utils import *
-from task_manager.forms import *
+from task_manager.utils import * # NOQA F403
+from task_manager.forms import * # NOQA F403
+
 
 class MainPage(DataMixin, TemplateView):
     template_name = 'index.html'
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Менеджер задач Hexlet")
+        c_def = self.get_user_context(title=_("Task manager Hexlet"))
         return context | c_def
 
-# - удалить
 
-def test(request):
-    return reverse('users_update', 7)
-
-# - 
 class LoginUser(DataMixin, LoginView):
     form_class = LoginUserForm
     template_name = "login_form.html"
-    
+
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        c_def = self.get_user_context(title="TEST Вход")
+        c_def = self.get_user_context(title=_("Login"))
         return context | c_def
-    
+
     def get_success_url(self):
-        messages.success(self.request, "Вы залогинены")
+        messages.success(self.request, _("You are successfully logged in"))
         return reverse_lazy('main_page')
 
 
 def logout_user(request):
     logout(request)
     return redirect('main_page')
-    
-    

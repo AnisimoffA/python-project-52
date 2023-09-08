@@ -1,7 +1,5 @@
-from django.contrib import admin
+from tasks.views import * # NOQA F403
 from django.urls import path
-from tasks.views import *
-from django.urls import path, include
 
 urlpatterns = [
     path('', TaskList.as_view(), name="task_list"),

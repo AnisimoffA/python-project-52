@@ -15,8 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from task_manager.views import *
+from task_manager.views import * # NOQA F403
 from django.urls import path, include
 
 urlpatterns = [
@@ -28,7 +27,4 @@ urlpatterns = [
     path('tasks/', include('tasks.urls')),
     path('statuses/', include('statuses.urls')),
     path('labels/', include('labels.urls')),
-    # удалить
-    path('test/', test)
-    # -
 ]
