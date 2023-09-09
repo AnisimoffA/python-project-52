@@ -4,7 +4,7 @@ version = "1.0.0"
 description = ""
 authors = ["Anisimoff <happyprooo@gmail.com>"]
 readme = "README.md"
-packages = [{include = "python_project_52"}]
+packages = [{include = "task_manager"}]
 build = "poetry.masonry.api"
 
 [tool.poetry.dependencies]
