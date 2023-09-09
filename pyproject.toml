@@ -10,7 +10,7 @@ packages = [{include = "python_project_52"}]
 python = "^3.10"
 django = "^4.2.4"
 gunicorn = "^21.2.0"
-flake8 = "^6.1.0"
+flake8 = "4.0.1"
 django-bootstrap4 = "^23.2"
 whitenoise = "^6.5.0"
 django-extensions = "^3.2.3"
