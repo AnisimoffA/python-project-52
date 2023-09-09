@@ -1,17 +1,16 @@
 [tool.poetry]
 name = "hexlet-code"
-version = "1.0.0"
+version = "0.1.0"
 description = ""
 authors = ["Anisimoff <happyprooo@gmail.com>"]
 readme = "README.md"
 packages = [{include = "python_project_52"}]
-build = "poetry.masonry.api"
 
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^4.2.4"
 gunicorn = "^21.2.0"
-flake8 = "^4.0.1"
+flake8 = "^6.1.0"
 django-bootstrap4 = "^23.2"
 whitenoise = "^6.5.0"
 django-extensions = "^3.2.3"
@@ -20,5 +19,5 @@ psycopg2-binary = "^2.9.7"
 
 
 [build-system]
-requires = ["poetry-core", "wheel", "setuptools"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
