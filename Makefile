@@ -5,12 +5,12 @@ lint:
 	poetry run flake8 task_manager labels statuses tasks users
 
 test:
-    poetry run python manage.py test
+	poetry run python manage.py test
 
 selfcheck:
 	poetry check
 
-check: selfcheck lint 
+check: selfcheck lint
 
 build: check
 	poetry build
@@ -20,10 +20,10 @@ push:
 
 dev:
 	poetry run python manage.py runserver
-	
+
 PORT ?= 8000
 start:
-	poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager.wsgi
+    poetry run gunicorn -w 5 -b 0.0.0.0:$(PORT) task_manager.wsgi
 
 shell:
 	poetry run python manage.py shell_plus
