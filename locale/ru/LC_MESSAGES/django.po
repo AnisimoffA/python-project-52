@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 21:44+0300\n"
+"POT-Creation-Date: 2023-09-10 22:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: labels/forms.py:8 statuses/forms.py:8
 #: task_manager/templates/labels/labels_list.html:20
 #: task_manager/templates/statuses/statuses_list.html:20
-#: task_manager/templates/tasks/task_list.html:31 tasks/forms.py:11
+#: task_manager/templates/tasks/task_list.html:37 tasks/forms.py:11
 msgid "Name"
 msgstr "Имя"
 
@@ -148,7 +148,7 @@ msgstr "Изменить метку"
 #: task_manager/templates/labels/labels_list.html:32
 #: task_manager/templates/statuses/statuses_list.html:32
 #: task_manager/templates/statuses/statuses_update.html:19
-#: task_manager/templates/tasks/task_list.html:49
+#: task_manager/templates/tasks/task_list.html:55
 #: task_manager/templates/tasks/task_page.html:46
 #: task_manager/templates/tasks/task_update.html:19
 #: task_manager/templates/users/users_list.html:34
@@ -158,7 +158,7 @@ msgstr "Изменить"
 
 #: task_manager/templates/labels/labels_list.html:21
 #: task_manager/templates/statuses/statuses_list.html:21
-#: task_manager/templates/tasks/task_list.html:35
+#: task_manager/templates/tasks/task_list.html:41
 #: task_manager/templates/tasks/task_page.html:29
 #: task_manager/templates/users/users_list.html:22
 msgid "Creation date"
@@ -166,7 +166,7 @@ msgstr "Дата создания"
 
 #: task_manager/templates/labels/labels_list.html:34
 #: task_manager/templates/statuses/statuses_list.html:34
-#: task_manager/templates/tasks/task_list.html:51
+#: task_manager/templates/tasks/task_list.html:57
 #: task_manager/templates/tasks/task_page.html:48
 #: task_manager/templates/users/users_list.html:36
 msgid "Delete"
@@ -215,22 +215,22 @@ msgstr "Удалить задачу"
 msgid "Tasks"
 msgstr "Задачи"
 
-#: task_manager/templates/tasks/task_list.html:22
-msgid "Search"
-msgstr "Поиск"
+#: task_manager/templates/tasks/task_list.html:28
+msgid "Show"
+msgstr "Показать"
 
-#: task_manager/templates/tasks/task_list.html:32
+#: task_manager/templates/tasks/task_list.html:38
 #: task_manager/templates/tasks/task_page.html:25 tasks/forms.py:20
 #: tasks/forms.py:44
 msgid "Status"
 msgstr "Статус"
 
-#: task_manager/templates/tasks/task_list.html:33
+#: task_manager/templates/tasks/task_list.html:39
 #: task_manager/templates/tasks/task_page.html:17
 msgid "Author"
 msgstr "Автор"
 
-#: task_manager/templates/tasks/task_list.html:34
+#: task_manager/templates/tasks/task_list.html:40
 #: task_manager/templates/tasks/task_page.html:21 tasks/forms.py:25
 #: tasks/forms.py:50
 msgid "Executor"
@@ -295,7 +295,7 @@ msgstr "Метка"
 
 #: tasks/forms.py:62
 msgid "Show only my posts"
-msgstr "Только мои задачи"
+msgstr "Только свои задачи"
 
 #: tasks/views.py:55
 msgid "Task page"
@@ -364,3 +364,8 @@ msgstr "Удаление"
 #: users/views.py:74
 msgid "User was deleted successfully"
 msgstr "Пользователь успешно удален"
+
+#, fuzzy
+#~| msgid "Search"
+#~ msgid "Search posts"
+#~ msgstr "Поиск"
