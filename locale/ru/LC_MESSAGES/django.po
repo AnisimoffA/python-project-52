@@ -291,7 +291,7 @@ msgstr "Описание"
 
 #: tasks/forms.py:62
 msgid "Show only my posts"
-msgstr "Показать только мои задачи"
+msgstr "Только мои задачи"
 
 #: tasks/views.py:54
 msgid "Task page"
