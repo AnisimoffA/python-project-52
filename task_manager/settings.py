@@ -155,6 +155,6 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'))
+LOCALE_PATHS = (os.path.join(BASE_DIR, 'locale'),)
 
 AUTH_USER_MODEL = 'users.CustomUsers'
