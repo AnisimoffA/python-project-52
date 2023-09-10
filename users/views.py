@@ -50,6 +50,13 @@ class UserUpdate(CustomUserPermisionsMixin, DataMixin, UpdateView):
         c_def = self.get_user_context(title=_("Updating user"))
         return context | c_def
 
+    def get_success_url(self):
+        messages.success(
+            self.request,
+            _("User was updated successfully")
+        )
+        return reverse_lazy('users_list')
+
 
 class UserDelete(CustomUserPermisionsMixin, CheckUsersTasksMixin, DataMixin, DeleteView, LoginRequiredMixin): # NOQA E501
     model = CustomUsers

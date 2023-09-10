@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 14:09+0300\n"
+"POT-Creation-Date: 2023-09-10 15:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,7 @@ msgstr "Изменить метку"
 
 #: labels/views.py:58
 msgid "Label was updated successfully"
-msgstr "Метка успешно обновлена"
+msgstr "Метка успешно изменена"
 
 #: labels/views.py:71
 msgid "Label deleting"
@@ -78,7 +78,7 @@ msgstr "Изменить статус"
 
 #: statuses/views.py:60
 msgid "Status was updated successfully"
-msgstr "Статус успешно обновлен"
+msgstr "Статус успешно изменен"
 
 #: statuses/views.py:74
 msgid "Status deleting"
@@ -308,7 +308,7 @@ msgstr "Изменить задачу"
 
 #: tasks/views.py:90
 msgid "Task was successfully updated"
-msgstr "Задача успешно обновлена"
+msgstr "Задача успешно изменена"
 
 #: tasks/views.py:103
 msgid "Task deleting"
@@ -344,8 +344,12 @@ msgstr "Пользователь успешно зарегистрирован"
 
 #: users/views.py:50
 msgid "Updating user"
-msgstr "Обновление"
+msgstr "Изменение пользователя"
 
-#: users/views.py:62
+#: users/views.py:56
+msgid "User was updated successfully"
+msgstr "Пользователь успешно изменен"
+
+#: users/views.py:69
 msgid "Deleting"
 msgstr "Удаление"
