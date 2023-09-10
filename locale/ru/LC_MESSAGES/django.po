@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 15:17+0300\n"
+"POT-Creation-Date: 2023-09-10 15:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -246,7 +246,7 @@ msgstr "Изменить задачу"
 
 #: task_manager/templates/users/users_delete.html:7
 msgid "Delete user"
-msgstr "Удалить статус"
+msgstr "Удалить пользователя"
 
 #: task_manager/templates/users/users_list.html:14 task_manager/utils.py:8
 #: users/views.py:19
@@ -356,3 +356,7 @@ msgstr "Пользователь успешно изменен"
 #: users/views.py:69
 msgid "Deleting"
 msgstr "Удаление"
+
+#: users/views.py:74
+msgid "User was deleted successfully"
+msgstr "Пользователь успешно удален"

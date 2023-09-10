@@ -58,7 +58,7 @@ class UserUpdate(CustomUserPermisionsMixin, DataMixin, UpdateView):
         return reverse_lazy('users_list')
 
 
-class UserDelete(CustomUserPermisionsMixin, CheckUsersTasksMixin, DataMixin, DeleteView, LoginRequiredMixin): # NOQA E501
+class UserDelete(CheckUsersTasksMixin, DataMixin, DeleteView, LoginRequiredMixin): # NOQA E501
     model = CustomUsers
     template_name = 'users/users_delete.html'
     success_url = reverse_lazy('users_list')
@@ -68,3 +68,8 @@ class UserDelete(CustomUserPermisionsMixin, CheckUsersTasksMixin, DataMixin, Del
         context = super().get_context_data(**kwargs)
         c_def = self.get_user_context(title=_("Deleting"))
         return context | c_def
+
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+        messages.success(self.request, _("User was deleted successfully"))
+        return response
