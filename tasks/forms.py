@@ -53,7 +53,7 @@ class FindTaskForm(forms. ModelForm):
         widget=forms.Select(attrs={'class': 'form-control'})
     )
     labels = forms.ModelChoiceField(
-        label=_("Labels"),
+        label=_("Label"),
         queryset=Label.objects.all(),
         widget=forms.Select(attrs={'class': 'form-control'}),
         required=False

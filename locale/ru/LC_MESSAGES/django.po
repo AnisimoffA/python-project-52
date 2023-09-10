@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 15:31+0300\n"
+"POT-Creation-Date: 2023-09-10 21:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr "Имя"
 
 #: labels/views.py:19 task_manager/templates/labels/labels_list.html:14
 #: task_manager/templates/tasks/task_page.html:34 task_manager/utils.py:10
-#: tasks/forms.py:31 tasks/forms.py:56
+#: tasks/forms.py:31
 msgid "Labels"
 msgstr "Метки"
 
@@ -211,7 +211,7 @@ msgid "Delete task"
 msgstr "Удалить задачу"
 
 #: task_manager/templates/tasks/task_list.html:14 task_manager/utils.py:11
-#: tasks/views.py:19
+#: tasks/views.py:20
 msgid "Tasks"
 msgstr "Задачи"
 
@@ -289,39 +289,43 @@ msgstr "Вы разлогинены"
 msgid "Description"
 msgstr "Описание"
 
+#: tasks/forms.py:56
+msgid "Label"
+msgstr "Метка"
+
 #: tasks/forms.py:62
 msgid "Show only my posts"
 msgstr "Только мои задачи"
 
-#: tasks/views.py:54
+#: tasks/views.py:55
 msgid "Task page"
 msgstr "Страница задачи"
 
-#: tasks/views.py:66
+#: tasks/views.py:67
 msgid "Task creating"
 msgstr "Создать задачу"
 
-#: tasks/views.py:73
+#: tasks/views.py:74
 msgid "Task was successfully created"
 msgstr "Задача успешно создана"
 
-#: tasks/views.py:85
+#: tasks/views.py:86
 msgid "Task updating"
 msgstr "Изменить задачу"
 
-#: tasks/views.py:90
+#: tasks/views.py:91
 msgid "Task was successfully updated"
 msgstr "Задача успешно изменена"
 
-#: tasks/views.py:103
+#: tasks/views.py:104
 msgid "Task deleting"
 msgstr "Удалить задачу"
 
-#: tasks/views.py:111
+#: tasks/views.py:112
 msgid "Task was successfully deleted"
 msgstr "Задача успешно удалена"
 
-#: tasks/views.py:117
+#: tasks/views.py:118
 msgid "Only the author can delete the task"
 msgstr "Только автор может удалить задачу"
 
