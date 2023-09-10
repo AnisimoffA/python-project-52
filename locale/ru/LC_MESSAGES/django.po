@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 13:20+0300\n"
+"POT-Creation-Date: 2023-09-10 13:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -176,11 +176,11 @@ msgstr "Менеджер задач"
 #: task_manager/templates/login_form.html:19 task_manager/utils.py:12
 #: task_manager/views.py:25
 msgid "Login"
-msgstr "Вход"
+msgstr "Войти"
 
-#: task_manager/templates/register_form.html:11 task_manager/utils.py:13
+#: task_manager/templates/register_form.html:11
 msgid "Register"
-msgstr "Регистрация"
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/statuses/statuses_create.html:7
 #: task_manager/templates/statuses/statuses_list.html:15
@@ -259,6 +259,10 @@ msgstr "Имя"
 msgid "Update user"
 msgstr "Обновить статус"
 
+#: task_manager/utils.py:13 users/views.py:33
+msgid "Registration"
+msgstr "Регистрация"
+
 #: task_manager/utils.py:14
 msgid "Logout"
 msgstr "Выход"
@@ -326,10 +330,6 @@ msgstr "Имя пользователя"
 #: users/forms.py:27
 msgid "Password confirmation"
 msgstr "Подтверждение пароля"
-
-#: users/views.py:33
-msgid "Registration"
-msgstr "Регистрация"
 
 #: users/views.py:37
 msgid "You have successfully registered"

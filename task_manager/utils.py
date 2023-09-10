@@ -10,7 +10,7 @@ menu = [
     {'title': _("Labels"), 'url_name': 'labels_list'},
     {'title': _("Tasks"), 'url_name': 'task_list'},
     {'title': _("Login"), 'url_name': 'login'},
-    {'title': _("Register"), 'url_name': 'users_register'},
+    {'title': _("Registration"), 'url_name': 'users_register'},
     {'title': _("Logout"), 'url_name': 'logout'},
 ]
 
