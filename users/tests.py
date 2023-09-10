@@ -38,7 +38,7 @@ class UserProfileUpdateTestCase(BaseClassTestCase):
         response = self.client.post(url, {
             'first_name': 'Sasha',
             'last_name': 'Testik',
-            'username': 'testusername',
+            'username': 'testuser',
             'password1': 'testpassword12',
             'password2': 'testpassword12'
         })

@@ -256,7 +256,7 @@ msgstr "Имя"
 
 #: task_manager/templates/users/users_update.html:7
 msgid "Update user"
-msgstr "Изменить статус"
+msgstr "Изменить пользователя"
 
 #: task_manager/utils.py:12
 msgid "Login page"
