@@ -21,6 +21,7 @@ class TaskCreateTestCase(BaseTestClass):
         data = {
             'name': 'test_task',
             'status': status.id,
+            'executor': self.user.id
         }
 
         response = self.client.post(url, data)
