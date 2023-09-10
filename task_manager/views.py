@@ -32,4 +32,5 @@ class LoginUser(DataMixin, LoginView):
 
 def logout_user(request):
     logout(request)
+    messages.info(request, _("You are successfully logged out"))
     return redirect('main_page')

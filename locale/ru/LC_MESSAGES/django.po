@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 13:58+0300\n"
+"POT-Creation-Date: 2023-09-10 14:09+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,7 +276,11 @@ msgstr "Менеджер задач Hexlet"
 
 #: task_manager/views.py:29
 msgid "You are successfully logged in"
-msgstr "Вы успешно залогинены"
+msgstr "Вы залогинены"
+
+#: task_manager/views.py:35
+msgid "You are successfully logged out"
+msgstr "Вы разлогинены"
 
 #: tasks/forms.py:15
 msgid "Description"
@@ -336,7 +340,7 @@ msgstr "Подтверждение пароля"
 
 #: users/views.py:37
 msgid "You have successfully registered"
-msgstr "Вы успешно зарегистрированы"
+msgstr "Пользователь успешно зарегистрирован"
 
 #: users/views.py:50
 msgid "Updating user"
