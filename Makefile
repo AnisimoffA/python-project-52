@@ -16,7 +16,7 @@ build: check
 	poetry build
 
 push:
-	python3 -m pip install dist/python_project_52-0.1.0-py3-none-any.whl --force-reinstall
+	python3 -m pip install dist/hexlet_code-1.0.0-py3-none-any.whl --force-reinstall
 
 dev:
 	poetry run python manage.py runserver
