@@ -41,7 +41,7 @@ msgstr "Метка успешно создана"
 
 #: labels/views.py:54
 msgid "Label updating"
-msgstr "Обновить метку"
+msgstr "Изменить метку"
 
 #: labels/views.py:58
 msgid "Label was updated successfully"
@@ -74,7 +74,7 @@ msgstr "Статус успешно создан"
 
 #: statuses/views.py:54
 msgid "Status updating"
-msgstr "Обновить статус"
+msgstr "Изменить статус"
 
 #: statuses/views.py:60
 msgid "Status was updated successfully"
@@ -147,7 +147,7 @@ msgstr "Удалить"
 
 #: task_manager/templates/labels/label_update.html:7
 msgid "Update label"
-msgstr "Обновить метку"
+msgstr "Изменить метку"
 
 #: task_manager/templates/labels/label_update.html:19
 #: task_manager/templates/labels/labels_list.html:32
@@ -159,7 +159,7 @@ msgstr "Обновить метку"
 #: task_manager/templates/users/users_list.html:34
 #: task_manager/templates/users/users_update.html:19
 msgid "Update"
-msgstr "Обновить"
+msgstr "Изменить"
 
 #: task_manager/templates/labels/labels_list.html:21
 #: task_manager/templates/statuses/statuses_list.html:21
@@ -196,7 +196,7 @@ msgstr "Вы уверены, что хотите удалить"
 
 #: task_manager/templates/statuses/statuses_update.html:7
 msgid "Update status"
-msgstr "Обновить статус"
+msgstr "Изменить статус"
 
 #: task_manager/templates/tasks/task_create.html:7
 #: task_manager/templates/tasks/task_list.html:15
@@ -239,7 +239,7 @@ msgstr "Отображение задачи"
 
 #: task_manager/templates/tasks/task_update.html:7
 msgid "Update task"
-msgstr "Обновить задачу"
+msgstr "Изменить задачу"
 
 #: task_manager/templates/users/users_delete.html:7
 msgid "Delete user"
@@ -256,7 +256,7 @@ msgstr "Имя"
 
 #: task_manager/templates/users/users_update.html:7
 msgid "Update user"
-msgstr "Обновить статус"
+msgstr "Изменить статус"
 
 #: task_manager/utils.py:12
 msgid "Login page"
@@ -304,7 +304,7 @@ msgstr "Задача успешно создана"
 
 #: tasks/views.py:85
 msgid "Task updating"
-msgstr "Обновить задачу"
+msgstr "Изменить задачу"
 
 #: tasks/views.py:90
 msgid "Task was successfully updated"

@@ -51,7 +51,7 @@ class UserUpdate(CustomUserPermisionsMixin, DataMixin, UpdateView):
         return context | c_def
 
 
-class UserDelete(CheckUsersTasksMixin, CustomUserPermisionsMixin, DataMixin, DeleteView, LoginRequiredMixin): # NOQA E501
+class UserDelete(CustomUserPermisionsMixin, CheckUsersTasksMixin, DataMixin, DeleteView, LoginRequiredMixin): # NOQA E501
     model = CustomUsers
     template_name = 'users/users_delete.html'
     success_url = reverse_lazy('users_list')
