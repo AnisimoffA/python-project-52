@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView # NOQA E501
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
+from django.urls import reverse_lazy
 from tasks.forms import * # NOQA F403
 from task_manager.utils import * # NOQA F403
 from users.models import * # NOQA F403
