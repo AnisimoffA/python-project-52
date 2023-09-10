@@ -1,4 +1,4 @@
-from statuses.views import * # NOQA F403
+from statuses.views import StatusesList, StatusesCreate, StatusesDelete, StatusesUpdate # NOQA E501
 from django.urls import path
 
 

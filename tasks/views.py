@@ -1,11 +1,14 @@
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView # NOQA E501
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
+from django.contrib import messages
 from django.urls import reverse_lazy
-from tasks.forms import * # NOQA F403
-from task_manager.utils import * # NOQA F403
-from users.models import * # NOQA F403
+from tasks.forms import FindTaskForm, TaskForm
+from task_manager.utils import DataMixin, CustomTaskPermisionsMixin
+from users.models import CustomUsers
+from tasks.models import Task
 
 
 class TaskList(LoginRequiredMixin, DataMixin, ListView):

@@ -1,6 +1,9 @@
 from django.test import TestCase, Client
-from tasks.models import * # NOQA F403
-from labels.models import * # NOQA F403
+from tasks.models import Task
+from labels.models import Label
+from users.models import CustomUsers
+from statuses.models import Status
+from django.urls import reverse
 
 
 class BaseTestClass(TestCase):

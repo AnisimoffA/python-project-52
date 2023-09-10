@@ -4,7 +4,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
 from django.db.models import RestrictedError
-from task_manager.utils import * # NOQA F403
+from django.contrib import messages
+from task_manager.utils import DataMixin
 from statuses.models import Status
 from statuses.forms import StatusForm
 

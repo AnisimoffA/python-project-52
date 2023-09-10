@@ -3,8 +3,10 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.contrib.auth import logout
 from django.utils.translation import gettext as _
-from task_manager.utils import * # NOQA F403
-from task_manager.forms import * # NOQA F403
+from django.shortcuts import redirect
+from django.contrib import messages
+from task_manager.utils import DataMixin
+from task_manager.forms import LoginUserForm
 
 
 class MainPage(DataMixin, TemplateView):

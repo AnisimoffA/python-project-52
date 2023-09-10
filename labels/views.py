@@ -3,7 +3,8 @@ from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.db.models import RestrictedError
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
-from task_manager.utils import * # NOQA F403
+from task_manager.utils import DataMixin
+from django.contrib import messages
 from labels.models import Label
 from labels.forms import LabelForm
 from django.utils.translation import gettext as _

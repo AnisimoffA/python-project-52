@@ -1,8 +1,8 @@
 from django.contrib import admin
-from users.models import * # NOQA F403
-from labels.models import * # NOQA F403
-from tasks.models import * # NOQA F403
-from statuses.models import * # NOQA F403
+from users.models import CustomUsers
+from labels.models import Label
+from tasks.models import Task
+from statuses.models import Status
 # Register your models here.
 
 admin.site.register(CustomUsers)

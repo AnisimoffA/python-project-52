@@ -1,4 +1,4 @@
-from labels.views import * # NOQA F403
+from labels.views import LabelsList, LabelCreate, LabelUpdate, LabelDelete
 from django.urls import path
 
 urlpatterns = [

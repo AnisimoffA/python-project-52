@@ -4,9 +4,9 @@ from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
-from task_manager.utils import * # NOQA F403
-from users.forms import * # NOQA F403
-from users.models import * # NOQA F403
+from task_manager.utils import DataMixin, CustomUserPermisionsMixin, CheckUsersTasksMixin # NOQA E501
+from users.forms import CustomUserCreationForm
+from users.models import CustomUsers
 
 
 class UserList(DataMixin, ListView):
