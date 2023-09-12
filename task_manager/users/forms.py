@@ -39,9 +39,9 @@ class CustomUserCreationForm(UserCreationForm):
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
-        unique_username = CustomUsers.objects.exclude(username=username).get(
+        unique_username = CustomUsers.objects.exclude(
             username=username
-        ).exists()
+        ).filter(username=username).exists()
         if unique_username:
             raise forms.ValidationError(
                 'Пользователь с таким именем уже существует.'
