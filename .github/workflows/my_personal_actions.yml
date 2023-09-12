@@ -24,7 +24,16 @@ jobs:
         run: |
           pip install poetry
           make install
-          
+
+      - name: build
+        run: make build
+
+      - name: upgrade pip
+        run: python3 -m pip install --upgrade pip
+
+      - name: package-install
+        run: python3 -m pip install --force dist/*.whl
+
       - name: Run linter
         run: |
           make check
