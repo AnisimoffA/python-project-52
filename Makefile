@@ -4,12 +4,6 @@ install:
 lint:
 	poetry run flake8 task_manager
 
-test:
-	coverage run manage.py test
-
-test-coverage:
-	coverage xml
-
 selfcheck:
 	poetry check
 
@@ -23,6 +17,12 @@ push:
 
 dev:
 	poetry run python manage.py runserver
+
+test:
+	coverage run manage.py test
+
+test-coverage:
+	coverage xml
 
 PORT ?= 8000
 start:
