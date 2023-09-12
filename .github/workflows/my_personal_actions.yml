@@ -29,9 +29,10 @@ jobs:
         run: |
           make check
 
-      - name: Test coverage
-        uses: paambaati/codeclimate-action@v3.2.0
+      - name: test coverage
+        uses: paambaati/codeclimate-action@v3.0.0
         env:
           CC_TEST_REPORTER_ID: 79926a34fdbc0872d5c402aac28ad0574cd528056958c033b56b3b2b155f565f
         with:
           coverageCommand: make test-coverage
+          debug: true
