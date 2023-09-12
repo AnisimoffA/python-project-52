@@ -7,6 +7,9 @@ lint:
 test:
 	poetry run python manage.py test
 
+test-coverage:
+
+
 selfcheck:
 	poetry check
 

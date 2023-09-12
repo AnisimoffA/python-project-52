@@ -1,0 +1,9 @@
+[report]
+omit =
+    */.local/*
+    /usr/*
+    */migrations/*
+    */tests/*
+    */__init__.py
+    */admin.py
+    */manage.py
