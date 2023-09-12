@@ -1,7 +1,7 @@
 from django.shortcuts import redirect
 from django.contrib import messages
 from django.utils.translation import gettext as _
-from tasks.models import Task
+from task_manager.tasks.models import Task
 
 
 menu = [

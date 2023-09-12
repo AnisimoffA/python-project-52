@@ -6,10 +6,6 @@ authors = ["Anisimoff <happyprooo@gmail.com>"]
 readme = "README.md"
 packages = [
     {include = "task_manager"},
-    {include = "labels"},
-    {include = "statuses"},
-    {include = "tasks"},
-    {include = "users"},
 ]
 
 [tool.poetry.dependencies]

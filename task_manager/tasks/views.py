@@ -5,10 +5,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
 from django.contrib import messages
 from django.urls import reverse_lazy
-from tasks.forms import FindTaskForm, TaskForm
+from task_manager.tasks.forms import FindTaskForm, TaskForm
 from task_manager.utils import DataMixin, CustomTaskPermisionsMixin
-from users.models import CustomUsers
-from tasks.models import Task
+from task_manager.users.models import CustomUsers
+from task_manager.tasks.models import Task
 
 
 class TaskList(LoginRequiredMixin, DataMixin, ListView):

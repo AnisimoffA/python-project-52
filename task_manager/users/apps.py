@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class UsersConfig(AppConfig):
-    name = 'users'
+    name = 'task_manager.users'
     verbose_name = "Пользователи"

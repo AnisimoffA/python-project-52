@@ -1,4 +1,4 @@
-from tasks.views import TaskList, TaskPage, TaskCreate, TaskUpdate, TaskDelete # NOQA E501
+from task_manager.tasks.views import TaskList, TaskPage, TaskCreate, TaskUpdate, TaskDelete # NOQA E501
 from django.urls import path
 
 urlpatterns = [

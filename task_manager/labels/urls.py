@@ -1,4 +1,4 @@
-from labels.views import LabelsList, LabelCreate, LabelUpdate, LabelDelete
+from task_manager.labels.views import LabelsList, LabelCreate, LabelUpdate, LabelDelete # NOQA E501
 from django.urls import path
 
 urlpatterns = [

@@ -5,8 +5,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.translation import gettext as _
 from task_manager.utils import DataMixin, CustomUserPermisionsMixin, CheckUsersTasksMixin # NOQA E501
-from users.forms import CustomUserCreationForm
-from users.models import CustomUsers
+from task_manager.users.forms import CustomUserCreationForm
+from task_manager.users.models import CustomUsers
 
 
 class UserList(DataMixin, ListView):

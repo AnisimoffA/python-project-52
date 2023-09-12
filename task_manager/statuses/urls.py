@@ -1,4 +1,4 @@
-from statuses.views import StatusesList, StatusesCreate, StatusesDelete, StatusesUpdate # NOQA E501
+from task_manager.statuses.views import StatusesList, StatusesCreate, StatusesDelete, StatusesUpdate # NOQA E501
 from django.urls import path
 
 

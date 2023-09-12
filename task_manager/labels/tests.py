@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from users.models import CustomUsers
-from labels.models import Label
+from task_manager.users.models import CustomUsers
+from task_manager.labels.models import Label
 # Create your tests here.
 
 

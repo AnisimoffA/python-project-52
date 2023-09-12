@@ -2,9 +2,9 @@ from django.db import models
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
 
-from statuses.models import Status
-from users.models import CustomUsers
-from labels.models import Label
+from task_manager.statuses.models import Status
+from task_manager.users.models import CustomUsers
+from task_manager.labels.models import Label
 from django.urls import reverse
 # Create your models here.
 

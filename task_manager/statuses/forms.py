@@ -1,14 +1,14 @@
 from django import forms
-from labels.models import Label
+from task_manager.statuses.models import Status
 from django.utils.translation import gettext as _
 
 
-class LabelForm(forms.ModelForm):
+class StatusForm(forms.ModelForm):
     name = forms.CharField(
         label=_('Name'),
         widget=forms.TextInput(attrs={'class': 'form-input'})
     )
 
     class Meta:
-        model = Label
+        model = Status
         fields = ['name']

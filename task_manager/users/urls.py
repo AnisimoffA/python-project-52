@@ -1,5 +1,5 @@
 from django.urls import path
-from users.views import UserList, UserRegister, UserUpdate, UserDelete # NOQA E501
+from task_manager.users.views import UserList, UserRegister, UserUpdate, UserDelete # NOQA E501
 
 
 urlpatterns = [

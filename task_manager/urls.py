@@ -23,8 +23,8 @@ urlpatterns = [
     path('', MainPage.as_view(), name="main_page"),
     path('login/', LoginUser.as_view(), name="login"),
     path('logout/', logout_user, name="logout"),
-    path('users/', include('users.urls')),
-    path('tasks/', include('tasks.urls')),
-    path('statuses/', include('statuses.urls')),
-    path('labels/', include('labels.urls')),
+    path('users/', include('task_manager.users.urls')),
+    path('tasks/', include('task_manager.tasks.urls')),
+    path('statuses/', include('task_manager.statuses.urls')),
+    path('labels/', include('task_manager.labels.urls')),
 ]

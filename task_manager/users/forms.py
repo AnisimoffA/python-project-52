@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from users.models import CustomUsers
+from task_manager.users.models import CustomUsers
 from django.utils.translation import gettext as _
 
 
@@ -39,13 +39,12 @@ class CustomUserCreationForm(UserCreationForm):
 
     def clean_username(self):
         username = self.cleaned_data.get('username')
-        try:
-            # Проверяем уникальность username, исключая текущего пользователя
-            CustomUsers.objects.exclude(
-                username=username).get(username=username
-                                       )
+        unique_username = CustomUsers.objects.exclude(username=username).get(
+            username=username
+        ).exists()
+        if unique_username:
             raise forms.ValidationError(
                 'Пользователь с таким именем уже существует.'
             )
-        except CustomUsers.DoesNotExist:
+        else:
             return username

@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class TasksConfig(AppConfig):
-    name = 'tasks'
+    name = 'task_manager.tasks'
     verbose_name = "Задачи"

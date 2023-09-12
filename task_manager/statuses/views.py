@@ -6,8 +6,8 @@ from django.utils.translation import gettext as _
 from django.db.models import RestrictedError
 from django.contrib import messages
 from task_manager.utils import DataMixin
-from statuses.models import Status
-from statuses.forms import StatusForm
+from task_manager.statuses.models import Status
+from task_manager.statuses.forms import StatusForm
 
 
 class StatusesList(LoginRequiredMixin, DataMixin, ListView):
