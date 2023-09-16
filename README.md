@@ -1,5 +1,4 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/AnisimoffA/python-project-52/workflows/hexlet-check/badge.svg)](https://github.com/AnisimoffA/python-project-52/actions)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9388f6ca6f9296e88a1d/test_coverage)](https://codeclimate.com/github/AnisimoffA/python-project-52/test_coverage)
 
 Task Manager link: [Here](python-project-52-production-312b.up.railway.app)
