@@ -160,6 +160,9 @@ mccabe==0.6.1 ; python_version >= "3.10" and python_version < "4.0" \
 packaging==23.1 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:994793af429502c4ea2ebf6bf664629d07c1a9fe974af92966e4b8d2df7edc61 \
     --hash=sha256:a392980d2b6cffa644431898be54b0045151319d1e7ec34f0cfed48767dd334f
+postgres==4.0 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:67c57de10c0d39cd5e3437eef7ac895b2b53747603b3edcd261dedec5ac04d4c \
+    --hash=sha256:d81f757acbde2ca12785b8a3d44c39f1e49782963e84eb67d3e029ad67d6b1d3
 psycopg2-binary==2.9.7 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:00d8db270afb76f48a499f7bb8fa70297e66da67288471ca873db88382850bf4 \
     --hash=sha256:024eaeb2a08c9a65cd5f94b31ace1ee3bb3f978cd4d079406aef85169ba01f08 \
@@ -221,6 +224,9 @@ psycopg2-binary==2.9.7 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:f955aa50d7d5220fcb6e38f69ea126eafecd812d96aeed5d5f3597f33fad43bb \
     --hash=sha256:fc10da7e7df3380426521e8c1ed975d22df678639da2ed0ec3244c3dc2ab54c8 \
     --hash=sha256:fdca0511458d26cf39b827a663d7d87db6f32b93efc22442a742035728603d5f
+psycopg2-pool==1.1 ; python_version >= "3.10" and python_version < "4.0" \
+    --hash=sha256:529c4100db56a3522cf680ce8d89e71511e37c7e0b1f120ce0dde0f13c6e5844 \
+    --hash=sha256:de88615c24ddfc7ee314c566976cfed4bbb009211255f2773ea09e5f938ff400
 pycodestyle==2.8.0 ; python_version >= "3.10" and python_version < "4.0" \
     --hash=sha256:720f8b39dde8b293825e7ff02c475f3077124006db4f440dcbc9a20b76548a20 \
     --hash=sha256:eddd5847ef438ea1c7870ca7eb78a9d47ce0cdb4851a5523949f2601d0cbbe7f
